@@ -2,28 +2,38 @@
 import React, { useState } from "react";
 const TextForm = (props) => {
   const [text, setText] = useState("");
+  //change to upper
   const handleUp = ()=>{
     let newtext = text.toUpperCase()
     setText(newtext)
   }
+  //chng to lower 
   const handleLow = ()=>{
     let newtext = text.toLowerCase()
     setText(newtext)
   }
+  //on each chng event perform
   const chnghandle = (event)=>{
     setText(event.target.value)
   }
-  return (
+  //count words
+  let wordCount = text.trim() === "" ? 0 : text.trim().split(/\s+/).length;
+  return ( 
     <>
-    <div>
+    <div className="container">
       <h1>{props.heading}</h1>
       <div className="mb-5"><textarea class="form-control" id="mybox" rows="9" value={text} onChange={chnghandle}></textarea>
       </div>
-      <button onClick={handleUp} className="primarybtn mx-3">Convert To Upper Case</button>
-      <button onClick={handleLow} className="primarybtn">Convert To Lower Case</button>
+      <button onClick={handleUp} className="btn btn-outline-primary mx-3">Convert To Upper Case</button>
+      <button onClick={handleLow} className="btn btn-outline-primary">Convert To Lower Case</button>
     </div>
-    <h2 className="my-3">Your Text Summary</h2>
-    <p>{text.split(" ").length} and {text.length} characters.</p>
+    <div className="container">
+        <h2 className="my-3">Your Text Summary</h2>
+        <p>{wordCount}Words and {text.length} Characters.</p>
+        <p>Read in {(0.008 * text.split(" ").length).toFixed(2)} minutes.</p> 
+        <h2>Preview text here</h2>
+        <p>{text}</p>
+    </div> 
   </>  
   );
 };

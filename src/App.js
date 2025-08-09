@@ -10,8 +10,6 @@ function App() {
     <div className="container">
     <TextForm heading="Enter Text To Analyze"/>
     </div>
-    
-    
     </>
     
   );
