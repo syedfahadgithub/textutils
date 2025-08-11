@@ -41,12 +41,15 @@ function App() {
   return (   
     <> 
     <Router>
+    <div className="d-flex flex-column min-vh-100">
     <Navbar title={"TextUtils"} mode = {mode} toggleMode = {toggleMode}/>
     <Alert alert={alert}/>
-    <div className="container">
+    </div>
+    <div className="container flex-grow-1">
         <Routes>
           <Route exact path="/about" element={<About mode = {mode} />} />
           <Route exact path="/" element={<TextForm showalert={showalert} heading="TextUtils-Enter text to perform some operation." mode = {mode}/>}/>
+          {/* <Route exact path =/> */}
         </Routes>
     </div>
     </Router>
