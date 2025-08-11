@@ -4,6 +4,7 @@ import Navbar from "./components/Navbar";
 import TextForm from "./components/TextForm";
 import Alert from "./components/Alert";
 import About from "./components/About";
+import Footer from "./components/Footer";
 import React from "react";
 import {
   BrowserRouter as Router,
@@ -12,6 +13,8 @@ import {
 } from "react-router-dom";
 
 function App() {
+
+  
   const [mode, setMode] = useState("light")
   const [alert, setAlert] = useState(null)
   const showalert = (message,type)=>{
@@ -42,11 +45,12 @@ function App() {
     <Alert alert={alert}/>
     <div className="container">
         <Routes>
-          <Route exact path="/about" element={<About />} mode = {mode}/>
+          <Route exact path="/about" element={<About mode = {mode} />} />
           <Route exact path="/" element={<TextForm showalert={showalert} heading="TextUtils-Enter text to perform some operation." mode = {mode}/>}/>
         </Routes>
     </div>
     </Router>
+    <Footer/>
     </> 
   );
 }
