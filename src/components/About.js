@@ -3,6 +3,7 @@ import React from 'react'
 const About = (props) => {
   return (
     <>
+    <div className='maincontent'>
       {/* <!-- About 1 - Bootstrap Brain Component --> */}
       <section className="py-3 py-md-5" style = {{color:props.mode==="dark"?"white":"black"}}>
         <div className="container">
@@ -63,6 +64,7 @@ const About = (props) => {
           </div>
         </div>
       </section>
+      </div>
     </>
   )
 }

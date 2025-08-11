@@ -32,6 +32,7 @@ const TextForm = (props) => {
   let readingTime = wordCount === 0 ? 0 : (0.008 * wordCount).toFixed(2);
   return ( 
     <>
+    <div className="maincontent">
     <div className="container" style = {{color:props.mode==="light"?"black":"white"}}>
       <h1>{props.heading}</h1>
       <div className="mb-5"><textarea class="form-control" id="mybox" rows="9" value={text} onChange={chnghandle} style = {{backgroundColor:props.mode==="light"?"white":"#042743", color:props.mode==="light"?"black":"white"}}></textarea>
@@ -48,6 +49,7 @@ const TextForm = (props) => {
         <h2>Preview text here</h2>
         <p>{text.length > 0 ? text:"Nothing to preview!"}</p>
     </div> 
+    </div>
   </>  
   );
 };

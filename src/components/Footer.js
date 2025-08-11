@@ -2,7 +2,7 @@ import React from 'react'
 
 const Footer = () => {
   return (
-    <footer className="bg-dark text-white py-1 mt-auto text-center">
+    <footer className="bg-dark text-white py-1 mt-3 text-center">
       <div className="container-fluid">
         <h6 className="mb-1">
           Words Counter App built with React JS 
